@@ -4,3 +4,13 @@ body {
   display: flex;
   justify-content: center;
 }
+* {
+  font-family: "Protest";
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Protest";
+  weight: 400;
+  src: url("../../public/fonts/ProtestRevolution-Regular.ttf");
+}

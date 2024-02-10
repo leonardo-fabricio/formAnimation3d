@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Input } from "../Input";
 import { theme } from "@/styles/colors";
 import { Button } from "../Button";
+import InputMask from "react-input-mask";
 
 interface FormRegisterProps {
   id: string;
@@ -17,7 +18,7 @@ export function FormRegister({ id, className }: FormRegisterProps) {
         <Label htmlFor="email">Email</Label>
         <Input required id="email" type="email" />
         <Label htmlFor="cell">Cell Phone</Label>
-        <Input required id="cell" type="text" />
+        <InputCell maxLength={11} required id="cell" mask={"(99) 99999-9999"} />
         <Label htmlFor="password">Password</Label>
         <Input required id="password" type="password" />
         <Button>Send</Button>
@@ -40,5 +41,16 @@ export const Label = styled.label`
   color: ${theme.colorText};
 `;
 export const TitleForm = styled.h2`
+  color: ${theme.colorText};
+`;
+export const InputCell = styled(InputMask)`
+  width: calc(100% - 24px);
+  height: 40px;
+  background-color: ${theme.color3};
+  border: 0;
+  padding: 0;
+  border-radius: 8px;
+  outline: 0;
+  padding: 0 12px;
   color: ${theme.colorText};
 `;
